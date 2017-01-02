@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  field_id: 1
+  category_id: 1
+  question: MyString
+  answer: MyString
+  last: 2017-01-01 16:45:05
+  was_correct: false
+
+two:
+  field_id: 1
+  category_id: 1
+  question: MyString
+  answer: MyString
+  last: 2017-01-01 16:45:05
+  was_correct: false
