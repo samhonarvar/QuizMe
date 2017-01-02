@@ -17,9 +17,11 @@
 
   <tbody>
     <% @quizzes.each do |quiz| %>
+      <% @category = Category.find_by(quiz.category_id) %>
+      <% @field = Field.find_by(quiz.field_id) %>
       <tr>
-        <td><%= quiz.field_id %></td>
-        <td><%= quiz.category_id %></td>
+        <td><%= @field.name %></td>
+        <td><%= @category.name %></td>
         <td><%= quiz.question %></td>
         <td><%= quiz.answer %></td>
         <td><%= quiz.last %></td>
