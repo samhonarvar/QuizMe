@@ -58,7 +58,11 @@ class QuizzesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to quizzes_url, notice: 'Quiz was successfully destroyed.' }
       format.json { head :no_content }
-    end
+  end
+  end
+
+  def quizme
+    @thequiz = Quiz.order("RAND()").limit(1).first
   end
 
   private
