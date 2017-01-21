@@ -58,11 +58,27 @@ class QuizzesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to quizzes_url, notice: 'Quiz was successfully destroyed.' }
       format.json { head :no_content }
-  end
+    end
   end
 
   def quizme
-    @thequiz = Quiz.order("RAND()").limit(1).first
+    @quiz = Quiz.order("RAND()").limit(1).first
+  end
+
+  def correct
+    @quiz = Quiz.find(params[:quiz_id])
+    @quiz.was_correct = true
+    if @quiz.save
+      redirect_to '/getquiz'
+    end
+  end
+
+  def wrong
+    @quiz = Quiz.find(params[:quiz_id])
+    @quiz.was_correct = false
+    if @quiz.save
+      redirect_to @quiz
+    end
   end
 
   private

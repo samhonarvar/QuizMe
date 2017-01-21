@@ -1,11 +1,20 @@
-<p>
-  <strong>Question:</strong>
-  <%= @thequiz.question %>
-</p>
+<div class="entry">
+  <p>
+    <h1><%= @quiz.question %></h1>
+  </p>
 
+  <p>
+    <strong>Answer:</strong>
+    <h1><%= @quiz.answer %></h1>
+  </p>
 
-<p>
-  <strong>Answer:</strong>
-  <%= @thequiz.answer %>
-</p>
+  <p>
+    <table>
+      <tr>
+        <td><%= button_to "Correct?", { :controller => "quizzes", :action => "correct", :quiz_id => @quiz.id, :method => :post} %></td>
+        <td><%= button_to "Wrong?", { :controller => "quizzes", :action => "wrong", :quizid => @quiz.id, :method => :get} %></td>
+      </tr>
+    </table>
+  </p>
 
+</div>

@@ -14,9 +14,8 @@
     <% @fields.each do |field| %>
       <tr>
         <td><%= field.name %></td>
-        <td><%= link_to 'Show', field %></td>
         <td><%= link_to 'Edit', edit_field_path(field) %></td>
-        <td><%= link_to 'Destroy', field, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', field, method: :delete, data: { confirm: 'You Sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

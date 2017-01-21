@@ -1,14 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Quizme</title>
+  <title>QuizMe</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
 
-<%= yield %>
+<body class="<%= controller.controller_name %>">
+
+<div id="banner">
+  <%= image_tag("logo.png") %>
+  <%= @page_title || "QuizMe" %>
+</div>
+<div id="columns">
+  <div id="side">
+    <ul>
+      <li><a href="http://localhost:3000">Home</a></li>
+      <li><a href="http://localhost:3000/getquiz">QuizMe</a></li>
+      <li><a href="http://localhost:3000/categories">Categories</a></li>
+      <li><a href="http://localhost:3000/fields">Fields</a></li>
+    </ul>
+  </div>
+  <div id="main">
+    <%= yield %>
+  </div>
+</div>
 
 </body>
 </html>

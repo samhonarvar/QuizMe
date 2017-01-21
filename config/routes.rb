@@ -1,17 +1,23 @@
 Rails.application.routes.draw do
-  resources :quizzes
+  resources :quizzes do
+    member do
+      get 'correct'
+    end
+  end
   resources :categories
   resources :fields
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'quizzes#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
   get 'getquiz' => 'quizzes#quizme'
+  #post 'getquiz' => 'quizzes#correct'
+  #get 'getquiz' => 'quizzes#wrong'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
