@@ -49,3 +49,6 @@ group :development do
   gem 'spring'
 end
 
+
+Fixing what I broke
+
