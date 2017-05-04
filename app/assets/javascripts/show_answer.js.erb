@@ -1,0 +1,16 @@
+/**
+ * Created by mashang on 1/21/17.
+ */
+
+document.addEventListener("turbolinks:load", function () {  // needed to call reload automatically
+  $(function () {
+    $("#show_answer").click(function () {
+      $(".answer").toggle();
+      if ($("#show_answer").text() == "Show") {
+        $("#show_answer").text("Hide");
+      } else {
+        $("#show_answer").text("Show");
+      }
+    });
+  });
+});

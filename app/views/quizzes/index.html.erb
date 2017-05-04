@@ -1,12 +1,12 @@
-<h1>Listing Quizzes</h1>
+<h1>Quizzes</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Field</th>
-      <th>Cat</th>
       <th>Question</th>
       <th>Answer</th>
+      <th>Field</th>
+      <th>Cat</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,11 +15,12 @@
     <% @quizzes.each do |quiz| %>
       <% @category = Category.find_by(quiz.category_id) %>
       <% @field = Field.find_by(quiz.field_id) %>
-      <tr>
+      <tr class="<%= cycle('quiz_line_odd', 'quiz_line_even') %>">
+        <td><%= quiz.question %></td>
+        <!-- <td><%= truncate(quiz.answer, :length => 100, :omission => "...", :escape =>  false) %></td> -->
+        <td><%= quiz.answer %></td>
         <td><%= @field.name %></td>
         <td><%= @category.name %></td>
-        <td><%= quiz.question %></td>
-        <td><%= quiz.answer %></td>
         <td><%= link_to 'Edit', edit_quiz_path(quiz) %></td>
         <td><%= link_to 'Delete', quiz, method: :delete, data: { confirm: 'You Sure?' } %></td>
       </tr>
@@ -31,5 +32,4 @@
 </table>
 
 <br>
-
 

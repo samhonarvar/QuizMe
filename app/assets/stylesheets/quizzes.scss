@@ -3,12 +3,29 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .quizzes {
+  table {
+    border-collapse: collapse;
+  }
+
+  table tr td {
+    padding: 10px;
+  }
+
+  thead {
+    text-align: left;
+    background: #00308F;
+    color: #FFF;
+  }
+
+  thead th {
+    padding: 10px;
+  }
+
   h1 {
     margin: 0;
     padding-bottom: 0.5em;
     font: 150% sans-serif;
-    color: #226;
-    border-bottom: 3px dotted #77d;
+    color: #000;
   }
 
   /* An entry in the store catalog */
@@ -39,5 +56,16 @@
         display: inline;
       }
     }
+
+    .answer {
+      display: none;
+    }
+  }
+
+  .quiz_line_odd {
+    background: #FEFEFA;
+  }
+  .quiz_line_even {
+    background: #FAEBD7;
   }
 }

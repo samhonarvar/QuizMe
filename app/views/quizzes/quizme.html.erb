@@ -4,15 +4,15 @@
   </p>
 
   <p>
-    <strong>Answer:</strong>
-    <h1><%= @quiz.answer %></h1>
+    <h2 class="answer"><%= @quiz.answer %></h2>
+    <%= button_tag "Show", :id => "show_answer" %>
   </p>
 
   <p>
     <table>
       <tr>
-        <td><%= button_to "Correct?", { :controller => "quizzes", :action => "correct", :quiz_id => @quiz.id, :method => :post} %></td>
-        <td><%= button_to "Wrong?", { :controller => "quizzes", :action => "wrong", :quizid => @quiz.id, :method => :get} %></td>
+        <td><%= link_to "Correct", correct_quiz_path(@quiz) %></td>
+        <td><%= link_to "Wrong", wrong_quiz_path(@quiz) %></td>
       </tr>
     </table>
   </p>

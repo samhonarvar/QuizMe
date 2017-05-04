@@ -10,7 +10,9 @@
 <body class="<%= controller.controller_name %>">
 
 <div id="banner">
-  <%= image_tag("logo.png") %>
+  <%= link_to "http://localhost:3000" do %>
+    <%= image_tag("logo.png") %>
+  <% end %>
   <%= @page_title || "QuizMe" %>
 </div>
 <div id="columns">
